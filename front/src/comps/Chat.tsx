@@ -11,11 +11,10 @@ const Chat = (props: Props) => {
     useEffect((()=>{
         switch (props.chat.from) {
             case ('human'): {
-                topRef.current!.style.backgroundColor = 'blue'; 
                 break
             }
             case ('bot'): {
-                topRef.current!.style.backgroundColor =  'red';
+                topRef.current!.style.backgroundColor =  '#57627077';
                 break
             }
         }
@@ -33,7 +32,7 @@ const Chat = (props: Props) => {
         ref={topRef}
         className="chat-top"
         >
-            {props.chat.body}
+            <p style={{marginLeft: 5}}>{props.chat.body}</p>
             {(desmos?<Desmos desmos={desmos}></Desmos>:<></>)}
         </div>
     )
