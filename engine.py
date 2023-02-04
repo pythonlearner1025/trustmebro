@@ -15,6 +15,8 @@ QUESTION = '''
             Examples:
             - Find the derivative of ln(e^(2x)) with respect to x
             - Evaluate the definite integral from 0 to 1 of sqrt(x^2-2x+1) dx
+            - Right Riemann sum, 4 subintervals, f(x)=9^x, 0 to 2.
+            - Limit of x^3/e^(3x) as x approaches infinity.
             Go!
         '''
 HINT = '''
