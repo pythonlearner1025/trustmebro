@@ -1,13 +1,17 @@
 import {ChatObject, DesmosObject} from "../types/types"
 import {useEffect, useRef, useState} from "react"
-import Desmos from "./Desmos"
+import DesmosView from "./Desmos"
 
 interface Props {
     chat: ChatObject
 }
 const Chat = (props: Props) => {
     const [useDesmos, setUseDesmos] = useState(false)
-    const [desmos, setDesmos] = useState<DesmosObject|null>(null)
+    const [desmos, setDesmos] = useState<string|null>(null)
+
+    useEffect((()=>{
+
+    }), [useDesmos])
     useEffect((()=>{
         switch (props.chat.from) {
             case ('human'): {
@@ -33,7 +37,7 @@ const Chat = (props: Props) => {
         className="chat-top"
         >
             <p style={{marginLeft: 5}}>{props.chat.body}</p>
-            {(desmos?<Desmos desmos={desmos}></Desmos>:<></>)}
+            {(useDesmos?<DesmosView desmos={props.chat.desmos}></DesmosView>:<></>)}
         </div>
     )
 }

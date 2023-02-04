@@ -2,7 +2,7 @@ export type ChatObject = {
     from: string
     type: 'bot_hint' | 'bot_answer' | 'bot_question' | 'human_answer'
     body: string
-    desmos: DesmosObject | null
+    desmos: string | null
     idx: number
 }
 

@@ -96,6 +96,14 @@ const UI = () => {
 
     }), [questions])
 
+    const parse = (s:string) => {
+        const parts = s.split('=')
+        console.log(parts)
+        const last = parts[parts.length-1]
+        console.log(last)
+        console.log(last.replaceAll(' ', '*'))
+        return last.replaceAll(' ', '*')
+    }
 
     const handleEnter = (e: any) => {
         if (e.key == 'Enter') {
@@ -117,8 +125,8 @@ const UI = () => {
                     const congratsobj: ChatObject = {
                         from: "bot",
                         type: "bot_answer",
-                        body: "Congradulations!\nYou got answer correct. Press New Question to keep grinding",
-                        desmos: null,
+                        body: `Congradulations!\nYou got answer correct. The answer was ${data.answer} You can check out its graph below. Press New Question to keep grinding`,
+                        desmos: 'x',
                         idx: newlog.length
                     }
                     newlog.push(congratsobj)

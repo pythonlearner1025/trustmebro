@@ -33,7 +33,7 @@ function App() {
   
   useEffect(()=> {
     const calculator = Desmos.GraphingCalculator(graphContainerRef.current);
-    calculator.setExpression({ id: 'graph1', latex: 'f(x) = input' });
+    calculator.setExpression({ id: 'graph1', latex: 'f(x) = ' });
     calculator.setExpression({ id: 'a-slider', latex: 'a=0' });
     calculator.setExpression({ id: 'b-slider', latex: 'b=0' });
     calculator.setExpression({

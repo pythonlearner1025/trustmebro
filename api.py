@@ -74,7 +74,7 @@ def check_answer(answer: Answer):
     generator = CalcEval(llm, wolfram_answer, user_answer)
     eval_res:str = generator.generate(question).strip()
     if eval_res.find('True') >= 0:
-        return {'correct': 'true', 'hint': None}
+        return {'correct': 'true', 'hint': None, 'answer': wolfram_answer}
     else:
         generator = CalcHint(llm, cache.latest_question, answer.answer)
         hint = generator.generate()
