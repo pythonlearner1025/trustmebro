@@ -38,8 +38,7 @@
 }
 
 .calculus-top{
-  position:absolute;
-  width:100vh;
+  width:100%;
   height:100vh;
   background-color:gray;
   display:flex;
@@ -56,30 +55,115 @@
 .question-wrapper{
   width: 20%;
   display: flex;
-  background-color:green;
+  overflow: scroll;
+  flex-direction: column;
 }
 
 .chat-wrapper{
   width: 80%;
   display:flex;
   flex-direction: column;
-  background-color:blue;
 }
 
 .chat-flexbox{
   height:95%;
   display: block;
-  background-color: purple;
   overflow:scroll;
 }
 
 .chat-input{
   height:5%;
   display:block; 
-  background-color: red;
+  overflow: hidden;
 }
 
 .chat-top{
   display:flex;
   height: fit-content;
+  color:white;
+}
+
+.input{
+  width: 100%;
+  height: 30px;
+  background-color: #57627077;
+  font-family: Arial, sans-serif;
+  outline-style: none;
+  color: white
+}
+
+.question-top{
+  justify-content: center;
+  height: fit-content;
+  display: block;
+  border-radius: 3px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.question-header{
+  padding-left:3px;
+  padding-right:3px;
+  display:inline-block;
+  justify-content: center;
+}
+
+
+.black {
+  background-color: #242636ea;
+}
+
+.background{
+  background-color: rgb(18, 18, 27)
+}
+
+.background-light{
+  background-color:  #383B53;
+}
+
+.background-light-light{
+  background-color: #57627077;
+}
+
+.tab-color{
+  background-color: rgb(32, 34, 44)
+}
+
+.background-secondary{
+  background-color: rgb(16, 16, 22)
+}
+
+.text-color-primary{
+  color: rgb(255,255,255)
+}
+
+.text-color-secondary{
+  color: rgb(226, 227, 238)
+}
+
+.border-color{
+  background-color: rgb(30,30,46)
+}
+
+.btn-base-color{
+  background-color: rgb(46,48,68);
+}
+
+.btn-hover-color{
+  background-color: rgb(46,48,48)
+}
+
+.status-good-color{
+  background-color: #8058ee ;
+  color: rgb(0, 0, 0);
+}
+
+.chat-ico {
+  width: 15px;
+  height: 15px;
+}
+
+h5 {
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
