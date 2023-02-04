@@ -5,21 +5,22 @@ import './App.css';
 
 function App() {
   //Integrals
+  //integral_0^1 sqrt(x^2 - 2 x + 1)dx
   const graphContainerRef = useRef(null);
   const graphContainerRef2 = useRef(null);
   useEffect(()=> {
     const calculator = Desmos.GraphingCalculator(graphContainerRef.current);
-    calculator.setExpression({ id: 'graph1', latex: 'y=x^3' });
+    calculator.setExpression({ id: 'graph1', latex: '\\sqrt{x^2 - 2 x + 1}' });
     calculator.setExpression({
       id: 'inequality1',
-      latex: '0\\le y\\le x^3 \\left\\{-2\\le x\\le 2\\right\\} ',
+      latex: '0\\le y\\le \\sqrt{x^2 - 2 x + 1} \\left\\{0\\le x\\le 1\\right\\} ',
       color: 'green',
       style: 'fill',
       hidden: false
     });
     calculator.setExpression({
       id: 'inequality2',
-      latex: '0\\ge y\\ge x^3 \\left\\{-2\\le x\\le 2\\right\\} ',
+      latex: '0\\ge y\\ge \\sqrt{x^2 - 2 x + 1} \\left\\{0\\le x\\le 1\\right\\} ',
       color: 'green',
       style: 'fill',
       hidden: false
@@ -30,12 +31,12 @@ function App() {
     };
   }, []);
   
-  //Differentiation
+  //empty calc without values
   useEffect(()=> {
-    const calculator2 = Desmos.GraphingCalculator(graphContainerRef2.current);
-    calculator2.setExpression({ id: 'graph2', latex: '1/4*x^2' });
-    calculator2.setExpression({ id: 'slope', latex: 'y - \\frac{1}{4}(2)^2 = \\frac{d}{dx} \\left( \\frac{1}{4}x^2 \\right) + 2' });
-    
+    const calculator2 = Desmos.GraphingCalculator(graphContainerRef2.current, {
+      evaluate: false,
+    });;
+
     return() => {
       calculator2.destroy();
     };
