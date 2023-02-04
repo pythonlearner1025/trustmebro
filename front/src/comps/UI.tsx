@@ -7,37 +7,9 @@ import "../App.css"
 import axios from "axios"
 import add from "../assets/add.svg"
 
-
-/*
-    Local Storage:
-    chat_history: [
-        {from: 'gpt', content: '', desmos: '', idx: ''}
-    ]
-    question_history: [
-        {name: '', content: ''}
-    ]
-*/
-const o0: ChatObject = {
-    from: 'bot',
-    type: 'bot_question',
-    body: 'my question to you is ha',
-    desmos: null,
-    idx: 0
-}
-
-const o1: ChatObject = {
-    from: 'human',
-    type: 'human_answer',
-    body: 'my answer is blahmy answer is blahmy answer is blahmy answer is blahmy answer is blahmy answer is blahmy answer is blahmy answer is blah my answer is blahmy answer is blahmy answer is blahmy answer is blahmy answer is blahmy answer is blahmy answer is blah',
-    desmos: null,
-    idx: 1
-}
-// each time GPT generates, add to local storage
-
-// on useEffect, try and pull from local storage first
-
-// clear for clearing local storage
+// ur URI Endpoint
 const URI = 'http://0.0.0.0:3001/api'
+
 const UI = () => {
     const [questions, setQuestions] = useState<Array<SavedQuestion>>([])
     const [chatlog, setChatlog] = useState<Array<ChatObject>>([])
@@ -125,7 +97,7 @@ const UI = () => {
                     const congratsobj: ChatObject = {
                         from: "bot",
                         type: "bot_answer",
-                        body: `Congradulations!\nYou got answer correct. The answer was ${data.answer} You can check out its graph below. Press New Question to keep grinding`,
+                        body: `Congradulations!\nYou got answer correct. The answer was ${data.answer}. You can check out its graph below. Press New Question to keep grinding!`,
                         desmos: 'x',
                         idx: newlog.length
                     }

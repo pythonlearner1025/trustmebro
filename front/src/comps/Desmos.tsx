@@ -12,7 +12,7 @@ const DesmosView = (props:Props) => {
     useEffect((()=>{
         console.log(props.desmos)
         const calculator = Desmos.GraphingCalculator(ref.current);
-        calculator.setExpression({ id: 'graph1', latex: `f(x) = ${props.desmos}` });
+        calculator.setExpression({ id: 'graph1', latex: `f(x) = Graph-here!` });
         return() => {
             calculator.destroy();
         };
